@@ -4,19 +4,18 @@ public class Hero extends essense {
 	
 	int str, dext, intl, vol, hp0, exp, hp;
 	
-	Hero(int str, int dext, int intl, int vol, int hp0, int exp){
+	Hero(int str, int dext, int intl, int vol, int hp0, int exp, int init){
 		
-		super('@', str, dext, intl, vol, hp0, exp);			//РєР»Р°СЃСЃ РїРµСЂСЃ. Р±СѓРґРµС‚ РѕРїСЂРµРґРµР»СЏС‚СЊСЃСЏ РїСЂРё СЃРѕР·РґР°РЅРёРё СЃР°РјРѕРіРѕ РіРµСЂРѕСЏ РЅР° РїРѕР»Рµ
+		super('@', str, dext, intl, vol, hp0, exp, init);			
+		//вызов разных классов будет производится при самом вызове героя в engine или поле (скорее всего engine)
+	}
+
+	
+	public void Move() {	//ужно прикрутить как аргумент события keylistenera или подобного
+		
 		
 	}
 
 	
-	public void Move() {	//РїР°СЂР°РјРµС‚СЂ - РЅР°Р¶Р°С‚Р°СЏ СЃС‚СЂРµР»РєР°
-		
-		
-	}
-
 	
-	//РЅСѓР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ С‡С‚Рѕ-С‚Рѕ..
 }
-//test

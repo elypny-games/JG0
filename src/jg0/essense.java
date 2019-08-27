@@ -1,11 +1,15 @@
 package jg0;
 
+import java.util.*;
+
 public class essense {
 
-	int str, dext, intl, vol, hp0, exp, hp; 	// СЃРёР»Р° Р»РѕРІРєРѕСЃС‚СЊ РёРЅС‚РµР»Р»РµРєС‚ РІРѕР»СЏ С…Рї РѕРїС‹С‚
-	char symb; //СЃРёРјРІРѕР» СЃСѓС‰РЅРѕСЃС‚Рё
+	int str, dext, intl, vol, hp0, exp, hp; 	
+	char symb; 
+	int x, y;
+	int init;
 	
-	essense(char symb, int str, int dext, int intl, int vol, int hp0, int exp){
+	essense(char symb, int str, int dext, int intl, int vol, int hp0, int exp, int init, int x, int y){
 		
 		this.symb = symb;
 		this.str = str;
@@ -15,8 +19,18 @@ public class essense {
 		this.hp0 = hp0;
 		this.exp = exp;
 		this.hp = hp0;
+		this.init = init;
+		this.x = x;
+		this.y = y;
 		
 	}
+	
+	essense(char symb, int str, int dext, int intl, int vol, int hp0, int exp, int init){
+		
+		this(symb, str, dext, intl, vol, hp0, exp, init, 0, 0);
+		
+	}
+	
 	
 	public char getSymb() {
 		return this.symb;
@@ -42,23 +56,70 @@ public class essense {
 	public int getHp() {
 		return this.hp;
 	}
-	
-	
-	
-	public void MPunch(essense target) {
-	
+	public int getX() {
+		return this.x;
+	}
+	public int getY() {
+		return this.y;
 	}
 	
+	public static void damage(essense target, int x) {
+		
+		target.hp -= x;
+		
+	}
 	
-	public void DPunch(essense target) {
+	public void Punch(essense target, int dist) {
+	
+		int r = (int) Math.random()*100;
+		if (r>=getStr()) damage(target, 0);
+		else damage(target, (getStr()-r)%10);
 		
 	}
 	
 	
-	public void Move(int x, int y) {
+
+	
+	public void MoveTo(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public void Move(String way, int s) {
+				
+		switch(way) {
+		
+		case "Right":
+			this.x += s; break;
+		case "Left":
+			this.x -= s; break;
+		case "Down":
+			this.y -= s; break;
+		case "Up":
+			this.y += s; break;
+		
+		}
+	}
+
+	
+	public void Move(String way) {
+
+		switch(way) {
+		
+		case "Right":
+			this.x += 1; break;
+		case "Left":
+			this.x -= 1; break;
+		case "Down":
+			this.y -= 1; break;
+		case "Up":
+			this.y += 1; break;
+		
+		}
 		
 	}
 	
 	
-	
+	//нужно что-то вроде деструктора
+	//или наконец изучить и юзать указатели
 }
