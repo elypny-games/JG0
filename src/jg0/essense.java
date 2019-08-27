@@ -73,7 +73,7 @@ public class essense {
 	
 		int r = (int) Math.random()*100;
 		if (r>=getStr()) damage(target, 0);
-		else damage(target, (getStr()-r)%10);
+		else damage(target, (getStr()-r)/10);
 		
 	}
 	
