@@ -14,12 +14,19 @@ public class scene {
 		
 	}
 	
+	public int getLvl() {
+		return this.lvl;
+	}
+	
 	
 	public boolean isEmpty(int x, int y) {
 		
-		if (sc[x][y]==' '||sc[x][y]=='·') return true;
+		if (sc[x][y]=='·') return true;
 		else return false;
 		
 	}
 	
+	public void refresh() {
+		
+	}
 }

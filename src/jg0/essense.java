@@ -1,7 +1,5 @@
 package jg0;
 
-import java.util.*;
-
 public class essense {
 
 	int str, dext, intl, vol, hp0, exp, hp; 	
@@ -69,7 +67,7 @@ public class essense {
 		
 	}
 	
-	public void Punch(essense target, int dist) {
+	public void Punch(essense target) {
 	
 		int r = (int) Math.random()*100;
 		if (r>=getStr()) damage(target, 0);
@@ -78,6 +76,11 @@ public class essense {
 	}
 	
 	
+	public boolean isNear(essense target) {
+		
+		return (Math.abs(this.x-target.x)==1||Math.abs(this.y-target.y)==1)?true:false;
+		
+	}
 
 	
 	public void MoveTo(int x, int y) {

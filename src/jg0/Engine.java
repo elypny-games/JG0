@@ -1,6 +1,5 @@
 package jg0;
 
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -13,7 +12,12 @@ public class Engine implements KeyListener{
 	Engine(Window parent){
 		
 		this.parent = parent;
+		
+		
+		
 	}
+	
+	
 	
 	public void keyPressed(KeyEvent e) {
 		 

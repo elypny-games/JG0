@@ -3,6 +3,7 @@ package jg0;
 import javax.swing.*;
 import java.awt.*;
 
+@SuppressWarnings("serial")
 public class Window extends JFrame{
 	
 	JPanel window, speech, world, chart, charAndSmth, worldAndSpch, smth;
@@ -94,6 +95,7 @@ public class Window extends JFrame{
 		
 	}
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		Window game = new Window();
